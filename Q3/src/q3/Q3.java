@@ -44,6 +44,15 @@ public class Q3 {
     private static void DisplayResult(ArrayList<Integer> list, int n) {
         ArrayList<ArrayList<Integer>> sets = getSets(list, n);
                
+        for (int i = 0; i < sets.size() - 1; i++) {
+            for (int j = i + 1; j < sets.size(); j++) {
+                if (sets.get(i).equals(sets.get(j))){
+                    sets.remove(j);
+                }
+                    
+            }
+        }
+       
         for (ArrayList<Integer> set : sets) {
             for (int i = 0; i < set.size(); i++) {
                 System.out.print(set.get(i));
